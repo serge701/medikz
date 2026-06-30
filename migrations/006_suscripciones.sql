@@ -11,7 +11,7 @@ ALTER TABLE clinicas
 
 -- Índice para consultas de estado
 ALTER TABLE clinicas
-    ADD INDEX IF NOT EXISTS idx_clinicas_estado_saas (estado_saas);
+    ADD INDEX idx_clinicas_estado_saas (estado_saas);
 
 -- Actualizar la clínica demo a "activo" sin vencimiento (cuenta eterna de demo)
 UPDATE clinicas SET estado_saas = 'activo', suscripcion_hasta = '2099-12-31' WHERE id = 1;
