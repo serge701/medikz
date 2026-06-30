@@ -4,9 +4,9 @@
 SET NAMES utf8mb4;
 
 ALTER TABLE clinicas
-    ADD COLUMN IF NOT EXISTS trial_ends_at     DATE     DEFAULT NULL          AFTER activo,
-    ADD COLUMN IF NOT EXISTS suscripcion_hasta DATE     DEFAULT NULL          AFTER trial_ends_at,
-    ADD COLUMN IF NOT EXISTS estado_saas       ENUM('trial','activo','suspendido')
+    ADD COLUMN trial_ends_at     DATE     DEFAULT NULL          AFTER activo,
+    ADD COLUMN suscripcion_hasta DATE     DEFAULT NULL          AFTER trial_ends_at,
+    ADD COLUMN estado_saas       ENUM('trial','activo','suspendido')
                                                NOT NULL DEFAULT 'trial'       AFTER suscripcion_hasta;
 
 -- Índice para consultas de estado
