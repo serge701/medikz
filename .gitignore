@@ -1,0 +1,15 @@
+# Entorno — NUNCA subir al repositorio
+.env
+
+# Logs
+storage/logs/
+
+# Dependencias (se instalan con composer install)
+vendor/
+
+# Claude Code — archivos de sesión local
+.claude/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

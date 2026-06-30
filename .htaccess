@@ -1,0 +1,16 @@
+# Todas las peticiones que no sean un archivo o carpeta real -> index.php
+RewriteEngine On
+
+# (Opcional) forzar UTF-8
+AddDefaultCharset UTF-8
+
+# No reescribir archivos/carpetas existentes (assets, imágenes, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Todo lo demás pasa por el front controller
+RewriteRule ^ index.php [QSA,L]
+
+# Evitar listado de directorios
+Options -Indexes
